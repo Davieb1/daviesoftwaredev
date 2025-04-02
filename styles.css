@@ -247,6 +247,10 @@ main {
     color: #FF7043;
 }
 
+.card img {
+    width: 100%;
+}
+
 /* Home */
 #home p {
     font-size: 1.2em;
