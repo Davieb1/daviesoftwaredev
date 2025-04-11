@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Freelance software developer in the UK specialising in web design, small-scale apps, and mobile solutions.">
+    <meta name="keywords" content="software developer, freelance, web design, small apps, UK">
+    <meta name="author" content="Davie">
+    <title>Davie Software Dev - Crafting Code That Solves Problems</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="matrix-bg"></div>
+
+    <nav class="sidebar">
+        <h1>Davie Software Dev</h1>
+        <ul>
+            <li><a href="#home"><i class="fas fa-home"></i> Home</a></li>
+            <li><a href="#services"><i class="fas fa-cogs"></i> Services</a></li>
+            <li><a href="#portfolio"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+            <li><a href="#about"><i class="fas fa-user"></i> About</a></li>
+            <li><a href="#tech"><i class="fas fa-tools"></i> Tech Stack</a></li>
+            <!-- <li><a href="#blog"><i class="fas fa-blog"></i> Blog</a></li> -->
+            <li><a href="#contact"><i class="fas fa-envelope"></i> Contact</a></li>
+        </ul>
+
+        <!-- In <nav class="sidebar"> after <ul> -->
+        <div class="social-links">
+            <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a>
+            <a href="https://x.com/yourusername" target="_blank"><i class="fab fa-x-twitter"></i></a>
+        </div>
+    </nav>
+
+    <main>
+
+        <section id="home" class="full-screen">
+            <h2>ALL PROJECTS</h2>
+            <p>View All Our Projects Here.</p>
+        </section>
+
+
+        <section id="portfolio" class="full-screen">
+            <h2>Portfolio</h2>
+            <div class="grid content-box">
+                <div class="card">
+                    <h3>Fitness Websites</h3>
+                    <p>Designed and built responsive websites for fitness clients, blending sleek visuals with practical
+                        functionality. Delivered fast-loading, user-friendly sites to boost client engagement.</p>
+                    <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+                    <img src="Fitness Site.png" alt="">
+                    <button class="fitness"><a href="https://dynamicfittech.co.uk/" target="_blank">View
+                            Project</a></button>
+                </div>
+
+                <div class="card">
+                    <h3>Digital Clock</h3>
+                    <p>Crafted a real-time digital clock using pure JavaScript. A clean, minimalist design showcasing my
+                        knack for front-end interactivity.</p>
+                    <p><strong>Tech:</strong> HTML, CSS, JavaScript</p>
+                    <img src="Digital Clock.png" alt="">
+                    <button class="digital"><a href="https://davieb1.github.io/Digital-Clock/" target="_blank">View
+                            Project</a></button>
+                </div>
+                
+                <div class="card">
+                    <h3>College App</h3>
+                    <p>Developed a small-scale app during college to build a healthy eating app that tracks calories of
+                        the foods entered. Solved real-world problems with efficient code and a simple UI.</p>
+                    <p><strong>Tech:</strong> Visual Basic</p>
+                    <img src="Small-Scale App.png" alt="">
+                    <button class="small-scale"><a href="https://davieb1.github.io/P1-Nutrition-App/index.html"
+                            target="_blank">View Project</a></button>                        
+                </div>
+
+                <!--Enter New Projects Below Here -->
+            </div>            
+        </section>
+
+
+
+        <section id="contact" class="full-screen">
+            <h2>Contact</h2>
+            <div class="content-box">
+                <p class="contact-intro">Got a project in mind? Drop me a message — I’d love to help bring it to life!
+                </p>
+                <form id="contact-form" class="contact-form">
+                    <input type="text" name="name" placeholder="Name" required>
+                    <input type="email" name="email" placeholder="Email" required>
+                    <textarea name="message" placeholder="Message" required></textarea>
+
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_autoresponse" value="Thanks for getting in touch!">
+
+                    <button type="submit">Send</button>
+                </form>
+
+                <!-- Thank You Popup -->
+                <div id="popup" class="popup" style="display: none;">
+                    <div class="popup-content">
+                        <h3>Thanks!</h3>
+                        <p>We have received your message, someone will reach out soon.</p>
+                        <button onclick="closePopup()">Close</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Davie Software Dev. All rights reserved.</p>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>

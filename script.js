@@ -30,31 +30,31 @@ window.addEventListener('resize', () => {
 
 // EmailJS
 emailjs.init("YOUR_PUBLIC_KEY");
-document.getElementById('contact-form').addEventListener('submit', function(event) {
+document.getElementById('contact-form').addEventListener('submit', function (event) {
     event.preventDefault();
     emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
         from_name: document.getElementById('name').value,
         from_email: document.getElementById('email').value,
         message: document.getElementById('message').value
     })
-    .then(() => {
-        const msg = document.getElementById('form-message');
-        msg.textContent = 'Thank you for your submission. We’ve received your email, and someone will reach out soon.';
-        msg.style.display = 'block';
-        msg.style.color = '#26A69A';
-        this.reset();
-    }, (error) => {
-        console.error('EmailJS error:', error);
-        const msg = document.getElementById('form-message');
-        msg.textContent = 'Oops! Something went wrong. Please try again.';
-        msg.style.display = 'block';
-        msg.style.color = '#FF7043';
-    });
+        .then(() => {
+            const msg = document.getElementById('form-message');
+            msg.textContent = 'Thank you for your submission. We’ve received your email, and someone will reach out soon.';
+            msg.style.display = 'block';
+            msg.style.color = '#26A69A';
+            this.reset();
+        }, (error) => {
+            console.error('EmailJS error:', error);
+            const msg = document.getElementById('form-message');
+            msg.textContent = 'Oops! Something went wrong. Please try again.';
+            msg.style.display = 'block';
+            msg.style.color = '#FF7043';
+        });
 });
 
 // Smooth scroll + animations
 document.querySelectorAll('.sidebar a').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
         e.preventDefault();
         document.querySelector(this.getAttribute('href')).scrollIntoView({
             behavior: 'smooth'
@@ -75,3 +75,37 @@ const observer = new IntersectionObserver((entries) => {
     });
 }, { threshold: 0.3 });
 document.querySelectorAll('.full-screen').forEach(section => observer.observe(section));
+
+
+document.getElementById("contact-form").addEventListener("submit", function (e) {
+    e.preventDefault();
+    const form = e.target;
+
+    fetch("https://formsubmit.co/ajax/24d4ab840d048ef07ff483828b5dec9a", {
+        method: "POST",
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+            name: form.name.value,
+            email: form.email.value,
+            message: form.message.value,
+            _captcha: false
+        })
+    })
+        .then(response => {
+            if (response.ok) {
+                showPopup();
+                form.reset();
+            } else {
+                alert("Oops! There was a problem submitting your form.");
+            }
+        });
+});
+
+function showPopup() {
+    document.getElementById("popup").style.display = "flex";
+}
+
+function closePopup() {
+    document.getElementById("popup").style.display = "none";
+}
+
